@@ -1,0 +1,339 @@
+/* High Jewelry Atelier Custom Utilities & Elegant Motion Styles */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #fbf9f6;
+  color: #1b1c1a;
+  scroll-behavior: smooth;
+}
+
+.font-headline-xl {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-headline-lg {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-headline-md {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-headline-sm {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono-luxury {
+  font-family: 'Plus Jakarta Sans', monospace;
+  letter-spacing: 0.12em;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Gold Gradient Text & Backgrounds */
+.gold-text-luxury {
+  background: linear-gradient(135deg, #a67c1e 0%, #d4af37 40%, #ffdf85 70%, #997312 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-foil-border {
+  border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+.gold-foil-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-foil-hover:hover {
+  border-color: rgba(197, 160, 89, 0.85);
+  box-shadow: 0 16px 36px -4px rgba(119, 90, 25, 0.12);
+  transform: translateY(-3px);
+}
+
+/* ==================== ELEGANT LUXURY MOTION ANIMATIONS ==================== */
+
+/* 1. Shimmering Gold Light Sweep */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 230, 160, 0.25) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 4s infinite linear;
+}
+
+/* 2. Delicate Gemstone Twinkle / Sparkle */
+@keyframes gemSparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(45deg);
+    filter: drop-shadow(0 0 6px rgba(255, 240, 180, 0.9));
+  }
+}
+
+.animate-sparkle {
+  animation: gemSparkle 2.5s infinite ease-in-out;
+}
+
+/* 3. Ethereal Float Motion */
+@keyframes etherealFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: etherealFloat 4.5s ease-in-out infinite;
+}
+
+/* 4. Pulse Gold Glow */
+@keyframes pulseGoldGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px 4px rgba(197, 160, 89, 0.25);
+  }
+}
+
+.animate-gold-glow {
+  animation: pulseGoldGlow 3s infinite ease-in-out;
+}
+
+/* 5. Chime Soundwave Waves */
+@keyframes soundChime {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+.chime-bar-1 { animation: soundChime 0.8s infinite ease-in-out; }
+.chime-bar-2 { animation: soundChime 1.1s infinite ease-in-out 0.2s; }
+.chime-bar-3 { animation: soundChime 0.9s infinite ease-in-out 0.4s; }
+.chime-bar-4 { animation: soundChime 1.2s infinite ease-in-out 0.1s; }
+
+/* 6. Smooth Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 28, 26, 0.68);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom Scrollbar for Luxury Theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f3f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5a059;
+  border-radius: 3px;
+}
+
+/* ==================== 7. LIVE ACTIVITY TICKER MARQUEE ==================== */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #eae8e5;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(127, 118, 103, 0.15);
+}
+.ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: tickerScroll 24s linear infinite;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #4e4639;
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+.ticker-item {
+  padding: 0 32px;
+}
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==================== 8. BEFORE / AFTER TRANSFORMATION SLIDER ==================== */
+.ba-wrapper {
+  position: relative;
+  max-width: 960px;
+  margin: 32px auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 480px;
+  cursor: ew-resize;
+  box-shadow: 0 24px 60px rgba(27, 28, 26, 0.18);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  user-select: none;
+}
+@media (max-width: 768px) {
+  .ba-wrapper {
+    height: 300px;
+  }
+}
+.ba-before, .ba-after {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  background: #c5a059;
+  z-index: 10;
+  cursor: ew-resize;
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.8);
+}
+.ba-handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #fbf9f6;
+  border: 2px solid #775a19;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  color: #775a19;
+}
+
+/* ==================== 9. HOTSPOT PULSING ANIMATION ==================== */
+@keyframes pulseHotspot {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(197, 160, 89, 0);
+  }
+}
+.hotspot-pulse {
+  animation: pulseHotspot 2s ease infinite;
+}
+
+/* ==================== 10. CONCIERGE CHAT WIDGET ==================== */
+#chat-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+@media (max-width: 768px) {
+  #chat-widget {
+    bottom: 80px;
+    right: 16px;
+  }
+}
+@keyframes slideUpChat {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-slide-up {
+  animation: slideUpChat 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes blinkDots {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
+.chat-dot:nth-child(1) { animation: blinkDots 1.2s infinite 0s; }
+.chat-dot:nth-child(2) { animation: blinkDots 1.2s infinite 0.2s; }
+.chat-dot:nth-child(3) { animation: blinkDots 1.2s infinite 0.4s; }
+
+/* ==================== 11. COMPARISON MATRIX ==================== */
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+}
+.compare-table thead th {
+  background: #1b1c1a;
+  color: #fbf9f6;
+  padding: 18px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  text-align: center;
+}
+.compare-table thead th.highlight {
+  background: #775a19;
+  color: #ffffff;
+}
+.compare-table tbody tr {
+  background: #ffffff;
+}
+.compare-table tbody tr:nth-child(even) {
+  background: #fbf9f6;
+}
+.compare-table tbody td {
+  padding: 16px 20px;
+  font-size: 13px;
+  border-bottom: 1px solid #eae8e5;
+  text-align: center;
+}
+.compare-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #1b1c1a;
+}
+.compare-table tbody td.highlight {
+  background: rgba(197, 160, 89, 0.08);
+  font-weight: 600;
+  color: #775a19;
+}
